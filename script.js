@@ -2,14 +2,6 @@
 // INICIALIZACIÓN Y CONFIGURACIÓN GENERAL
 // =====================================================
 
-// Configuración de EmailJS - IMPORTANTE: Reemplaza con tus datos
-// Para obtener estos datos, crea una cuenta en https://www.emailjs.com/
-const EMAIL_CONFIG = {
-    serviceID: 'service_id_aqui',      // Reemplaza con tu Service ID
-    templateID: 'template_id_aqui',    // Reemplaza con tu Template ID
-    publicKey: 'public_key_aqui'       // Reemplaza con tu Public Key
-};
-
 // =====================================================
 // MENÚ HAMBURGUESA - MÓVIL
 // =====================================================
@@ -80,147 +72,6 @@ navLinks.forEach(link => {
         }
     });
 });
-
-// =====================================================
-// FORMULARIO DE CONTACTO
-// =====================================================
-
-const contactForm = document.getElementById('contactForm');
-const formMessage = document.getElementById('formMessage');
-
-// Inicializar EmailJS
-function initEmailJS() {
-    emailjs.init(EMAIL_CONFIG.publicKey);
-}
-
-// Manejar envío del formulario
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    // Obtener valores del formulario
-    const formData = {
-        name: document.getElementById('name').value.trim(),
-        email: document.getElementById('email').value.trim(),
-        phone: document.getElementById('phone').value.trim() || 'No proporcionado',
-        subject: document.getElementById('subject').value,
-        message: document.getElementById('message').value.trim()
-    };
-
-    // Validación básica
-    if (!validateForm(formData)) {
-        return;
-    }
-
-    // Mostrar estado de carga
-    const submitBtn = contactForm.querySelector('.submit-button');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Enviando...';
-    submitBtn.disabled = true;
-
-    try {
-        // Opción 1: Usar EmailJS (requiere configuración)
-        if (EMAIL_CONFIG.serviceID !== 'service_id_aqui') {
-            await enviarConEmailJS(formData);
-        } else {
-            // Opción 2: Usar Formspree (más fácil, sin configuración)
-            await enviarConFormspree(formData);
-        }
-
-        // Mostrar mensaje de éxito
-        mostrarMensaje('¡Mensaje enviado exitosamente! Nos pondremos en contacto pronto.', 'success');
-        contactForm.reset();
-
-    } catch (error) {
-        console.error('Error al enviar:', error);
-        mostrarMensaje('Error al enviar el mensaje. Por favor, intenta de nuevo.', 'error');
-    } finally {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }
-});
-
-// Validar formulario
-function validateForm(data) {
-    if (!data.name || data.name.length < 3) {
-        mostrarMensaje('El nombre debe tener al menos 3 caracteres.', 'error');
-        return false;
-    }
-
-    if (!validateEmail(data.email)) {
-        mostrarMensaje('Por favor ingresa un correo electrónico válido.', 'error');
-        return false;
-    }
-
-    if (!data.subject) {
-        mostrarMensaje('Por favor selecciona un motivo de consulta.', 'error');
-        return false;
-    }
-
-    if (!data.message || data.message.length < 10) {
-        mostrarMensaje('El mensaje debe tener al menos 10 caracteres.', 'error');
-        return false;
-    }
-
-    return true;
-}
-
-// Validar email
-function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-}
-
-// Opción 1: Enviar con EmailJS
-async function enviarConEmailJS(formData) {
-    const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        phone: formData.phone,
-        subject: formData.subject,
-        message: formData.message,
-        to_email: 'tu-email@example.com' // Cambia esto con tu email
-    };
-
-    await emailjs.send(
-        EMAIL_CONFIG.serviceID,
-        EMAIL_CONFIG.templateID,
-        templateParams
-    );
-}
-
-// Opción 2: Enviar con Formspree (más fácil, sin configuración backend)
-async function enviarConFormspree(formData) {
-    const formspreeId = 'your_formspree_id'; // Obtén esto en https://formspree.io/
-    const url = `https://formspree.io/f/${formspreeId}`;
-
-    const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone,
-            subject: formData.subject,
-            message: formData.message
-        })
-    });
-
-    if (!response.ok) {
-        throw new Error('Error en la respuesta del servidor');
-    }
-}
-
-// Mostrar mensaje
-function mostrarMensaje(mensaje, tipo) {
-    formMessage.textContent = mensaje;
-    formMessage.className = `form-message ${tipo}`;
-    
-    setTimeout(() => {
-        formMessage.className = 'form-message';
-    }, 5000);
-}
 
 // =====================================================
 // CARGA DE IMAGEN DE PERFIL
@@ -306,9 +157,6 @@ function isMobileDevice() {
 // =====================================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Inicializar EmailJS
-    initEmailJS();
-
     // Otros inicios si es necesario
     console.log('Portafolio cargado correctamente');
     

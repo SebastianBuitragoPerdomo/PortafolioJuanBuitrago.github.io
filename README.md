@@ -21,11 +21,9 @@ Consulta `GUIA_CONFIGURACION.md` para una guía detallada de todas las opciones.
 - ✅ **Totalmente Responsive** - Funciona en móvil, tablet y desktop
 - ✅ **6 Secciones Principales** - Inicio, Acerca de, Habilidades, Experiencia, Servicios, Contacto
 - ✅ **Foto de Perfil Circular** - Editable y personalizable
-- ✅ **Formulario de Contacto** - Con validación y envío de emails
-- ✅ **Scroll Fluido** - Tanto táctil como con mouse
-- ✅ **Animaciones Suaves** - Transiciones profesionales
-- ✅ **Sistema de Emails** - Integrado con Formspree o EmailJS
-- ✅ **Almacenamiento Local** - Guarda tu foto de perfil
+- ✅ **Formulario de Contacto** - Configurado con FormSubmit (parámetros básicos, sin registro)
+- ✅ **Información de Contacto** - Solo correo electrónico
+- ✅ **Redes Sociales** - Solo LinkedIn
 
 ## 📁 Archivos del Proyecto
 
@@ -44,25 +42,31 @@ Consulta `GUIA_CONFIGURACION.md` para una guía detallada de todas las opciones.
 
 1. **Abre tu navegador** → Arrastra `index.html` al navegador
 2. **Personaliza contenido** → Edita `index.html` con tu información
-3. **Configura emails** → Lee `CONFIGURACION_RAPIDA.md`
-4. **Prueba el formulario** → Llena y envía un mensaje de prueba
-5. **¡Listo!** → Tu portafolio funciona completamente
+3. **¡Listo!** → El formulario ya funciona con FormSubmit
 
 ## 📧 Sistema de Contacto
 
-El formulario está pre-configurado con **2 opciones**:
+El formulario está configurado con **FormSubmit** usando sus parámetros básicos (sin registro):
 
-### Opción A: Formspree (Recomendado)
-- ✅ Más fácil de configurar
-- ✅ No requiere backend
-- ✅ Libre de mantenimiento
-- 👉 Lee `CONFIGURACION_RAPIDA.md` - Opción A
+```html
+<form action="https://formsubmit.co/ductairescolombia@gmail.com" method="POST">
+```
 
-### Opción B: EmailJS
-- ✅ Más control personalizado
-- ✅ Integración profesional
-- ✅ Dashboard de estadísticas
-- 👉 Lee `CONFIGURACION_RAPIDA.md` - Opción B
+### Campos configurados:
+- ✅ `name="name"` - Nombre completo
+- ✅ `name="email"` - Correo electrónico
+- ✅ `name="phone"` - Teléfono (opcional)
+- ✅ `name="subject"` - Motivo de consulta
+- ✅ `name="message"` - Mensaje detallado
+
+### Para activar:
+1. **Envía el formulario una vez** desde tu sitio
+2. **Confirma el email** que llega a `ductairescolombia@gmail.com`
+3. **¡Funcionará automáticamente!**
+
+- ✅ **Sin registro** requerido
+- ✅ **Sin configuración adicional**
+- ✅ **Emails directos** a tu bandeja
 
 ## 🎨 Personalización
 
