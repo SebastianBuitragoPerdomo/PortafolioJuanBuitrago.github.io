@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Portafolio - Checklist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+            background: linear-gradient(135deg, #1a3a52 0%, #2c5f8d 100%);
+            color: #2c3e50;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            color: #1a3a52;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            border-left: 4px solid #e74c3c;
+            background-color: #f5f7fa;
+            border-radius: 5px;
+        }
+        
+        .section h2 {
+            color: #1a3a52;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .checklist {
+            list-style: none;
+        }
+        
+        .checklist li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .checklist li::before {
+            content: '☐';
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+            color: #e74c3c;
+        }
+        
+        .success {
+            background-color: #d5f4e6;
+            color: #1b4d3e;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #27ae60;
+        }
+        
+        .warning {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            border-left: 4px solid #17a2b8;
+        }
+        
+        .code {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 1rem;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .btn-primary {
+            background-color: #1a3a52;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0f2840;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(26, 58, 82, 0.3);
+        }
+        
+        .btn-success {
+            background-color: #27ae60;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background-color: #229954;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+        }
+        
+        .btn-warning {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .btn-warning:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+        
+        .footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #dfe6e9;
+            text-align: center;
+            color: #7f8c8d;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .button-group {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌬️ Portafolio Técnico AC</h1>
+        <p class="subtitle">Checklist de Verificación y Próximos Pasos</p>
+        
+        <!-- SECCIÓN 1: VERIFICACIÓN DE ARCHIVOS -->
+        <div class="section">
+            <h2>✅ Verificación de Archivos</h2>
+            <ul class="checklist">
+                <li>index.html - Estructura principal (HTML5)</li>
+                <li>styles.css - Estilos responsive (CSS3)</li>
+                <li>script.js - Funcionalidad interactiva (JavaScript)</li>
+                <li>CONFIGURACION_RAPIDA.md - Guía rápida de configuración</li>
+                <li>GUIA_CONFIGURACION.md - Guía completa y detallada</li>
+                <li>EJEMPLOS_CONTENIDO.html - Ejemplos de contenido personalizado</li>
+            </ul>
+            <div class="success">✓ Todos los archivos han sido creados exitosamente</div>
+        </div>
+        
+        <!-- SECCIÓN 2: CARACTERÍSTICAS IMPLEMENTADAS -->
+        <div class="section">
+            <h2>🎯 Características Implementadas</h2>
+            <ul class="checklist">
+                <li>Interfaz profesional con colores corporativos</li>
+                <li>Navegación responsiva (menú hamburguesa en móvil)</li>
+                <li>Scroll suave táctil y con mouse</li>
+                <li>6 secciones principales personalizables</li>
+                <li>Círculo para foto de perfil (editable)</li>
+                <li>Formulario de contacto con validación</li>
+                <li>Sistema de envío de emails integrado</li>
+                <li>Diseño 100% responsive (móvil, tablet, desktop)</li>
+                <li>Animaciones y transiciones profesionales</li>
+                <li>Compatibilidad con navegadores modernos</li>
+            </ul>
+            <div class="success">✓ Todas las características solicitadas están implementadas</div>
+        </div>
+        
+        <!-- SECCIÓN 3: PRÓXIMOS PASOS -->
+        <div class="section">
+            <h2>📋 Próximos Pasos (Por Orden)</h2>
+            <ol style="margin-left: 2rem;">
+                <li style="margin: 1rem 0;">
+                    <strong>Paso 1: Configurar Sistema de Emails</strong>
+                    <p style="margin-top: 0.5rem; color: #7f8c8d;">
+                        Lee el archivo <code>CONFIGURACION_RAPIDA.md</code> para elegir entre Formspree (recomendado) o EmailJS
+                    </p>
+                </li>
+                <li style="margin: 1rem 0;">
+                    <strong>Paso 2: Personalizar Contenido</strong>
+                    <p style="margin-top: 0.5rem; color: #7f8c8d;">
+                        Edita index.html con tu nombre, experiencia, servicios y datos de contacto
+                    </p>
+                </li>
+                <li style="margin: 1rem 0;">
+                    <strong>Paso 3: Cargar Foto de Perfil</strong>
+                    <p style="margin-top: 0.5rem; color: #7f8c8d;">
+                        Sube una foto profesional (usa la opción de clic en la foto o URL directa)
+                    </p>
+                </li>
+                <li style="margin: 1rem 0;">
+                    <strong>Paso 4: Personalizar Colores (Opcional)</strong>
+                    <p style="margin-top: 0.5rem; color: #7f8c8d;">
+                        Edita styles.css si deseas cambiar los colores corporativos
+                    </p>
+                </li>
+                <li style="margin: 1rem 0;">
+                    <strong>Paso 5: Probar Localmente</strong>
+                    <p style="margin-top: 0.5rem; color: #7f8c8d;">
+                        Usa python -m http.server 8000 para probar en http://localhost:8000
+                    </p>
+                </li>
+                <li style="margin: 1rem 0;">
+                    <strong>Paso 6: Desplegar Online</strong>
+                    <p style="margin-top: 0.5rem; color: #7f8c8d;">
+                        Sube a GitHub Pages, Netlify o tu hosting personal
+                    </p>
+                </li>
+            </ol>
+        </div>
+        
+        <!-- SECCIÓN 4: TECNOLOGÍAS UTILIZADAS -->
+        <div class="section">
+            <h2>💻 Tecnologías Utilizadas</h2>
+            <ul class="checklist">
+                <li><strong>HTML5</strong> - Estructura semántica moderna</li>
+                <li><strong>CSS3</strong> - Grid, Flexbox, Animaciones, Variables</li>
+                <li><strong>JavaScript ES6+</strong> - Vanilla JS (sin dependencias)</li>
+                <li><strong>Font Awesome 6</strong> - Iconografía profesional</li>
+                <li><strong>EmailJS</strong> - Sistema de envío de emails (opcional)</li>
+                <li><strong>Formspree</strong> - Sistema de formularios simplificado (alternativa)</li>
+                <li><strong>LocalStorage API</strong> - Almacenamiento de imagen de perfil</li>
+                <li><strong>Intersection Observer</strong> - Animaciones al scroll</li>
+            </ul>
+            <div class="info">ℹ️ Todas las tecnologías son compatibles con navegadores modernos y dispositivos móviles</div>
+        </div>
+        
+        <!-- SECCIÓN 5: ESTRUCTURA DEL PROYECTO -->
+        <div class="section">
+            <h2>📁 Estructura del Proyecto</h2>
+            <div class="code">
+/PortafolioJuanBuitrago.github.io/
+├── index.html                  (Página principal)
+├── styles.css                  (Estilos CSS)
+├── script.js                   (Funcionalidad JS)
+├── README.md                   (Este archivo)
+├── CONFIGURACION_RAPIDA.md     (Guía rápida)
+├── GUIA_CONFIGURACION.md       (Guía completa)
+├── EJEMPLOS_CONTENIDO.html     (Ejemplos)
+└── LICENSE                     (Licencia MIT)
+            </div>
+        </div>
+        
+        <!-- SECCIÓN 6: RECOMENDACIONES -->
+        <div class="section">
+            <h2>💡 Recomendaciones Profesionales</h2>
+            <ul class="checklist">
+                <li>Usa una foto profesional de alta calidad en la sección de perfil</li>
+                <li>Actualiza tu experiencia laboral con fechas precisas</li>
+                <li>Destaca tus servicios más solicitados</li>
+                <li>Incluye números reales (clientes satisfechos, años de experiencia)</li>
+                <li>Responde rápido a los mensajes del formulario</li>
+                <li>Mantén tus datos de contacto actualizados</li>
+                <li>Vincula tus redes sociales reales</li>
+                <li>Prueba el formulario antes de publicar</li>
+                <li>Implementa Google Analytics para medir visitas</li>
+                <li>Actualiza regularmente el contenido</li>
+            </ul>
+        </div>
+        
+        <!-- SECCIÓN 7: SOLUCIÓN DE PROBLEMAS -->
+        <div class="section">
+            <h2>🔧 Solución de Problemas</h2>
+            
+            <h3 style="color: #e74c3c; margin-top: 1rem;">❌ El formulario no envía emails</h3>
+            <p style="color: #7f8c8d;">→ Asegúrate de haber configurado correctamente EmailJS o Formspree en script.js</p>
+            <p style="color: #7f8c8d;">→ Revisa la consola del navegador (F12) para mensajes de error</p>
+            
+            <h3 style="color: #e74c3c; margin-top: 1rem;">❌ La foto de perfil no se carga</h3>
+            <p style="color: #7f8c8d;">→ Verifica que la URL de la imagen sea correcta</p>
+            <p style="color: #7f8c8d;">→ Prueba haciendo clic en el círculo de foto para cargar una imagen</p>
+            
+            <h3 style="color: #e74c3c; margin-top: 1rem;">❌ El menú hamburguesa no funciona</h3>
+            <p style="color: #7f8c8d;">→ Limpia el caché del navegador (Ctrl+Shift+Del)</p>
+            <p style="color: #7f8c8d;">→ Recarga la página completamente (Ctrl+F5)</p>
+            
+            <h3 style="color: #e74c3c; margin-top: 1rem;">❌ Los estilos no se ven correctamente</h3>
+            <p style="color: #7f8c8d;">→ Verifica que styles.css esté en la misma carpeta que index.html</p>
+            <p style="color: #7f8c8d;">→ Abre la consola para ver errores de carga de archivos</p>
+        </div>
+        
+        <!-- SECCIÓN 8: CONTACTO Y SOPORTE -->
+        <div class="section">
+            <h2>📞 Soporte Técnico</h2>
+            <div class="warning">
+                ⚠️ Si encuentras algún problema:
+                <br/><br/>
+                1. Revisa los archivos de guía (CONFIGURACION_RAPIDA.md o GUIA_CONFIGURACION.md)
+                <br/>
+                2. Abre la consola del navegador (F12) para ver mensajes de error
+                <br/>
+                3. Valida que todos los archivos estén en la misma carpeta
+                <br/>
+                4. Asegúrate de haber configurado correctamente el sistema de emails
+            </div>
+        </div>
+        
+        <!-- BOTONES DE ACCIÓN -->
+        <div class="button-group">
+            <a href="index.html" class="btn btn-primary">🔗 Ver Portafolio</a>
+            <a href="CONFIGURACION_RAPIDA.md" class="btn btn-success">⚙️ Configuración Rápida</a>
+            <a href="GUIA_CONFIGURACION.md" class="btn btn-warning">📚 Guía Completa</a>
+        </div>
+        
+        <!-- FOOTER -->
+        <div class="footer">
+            <p><strong>🌬️ Portafolio Profesional para Técnicos de Aire Acondicionado</strong></p>
+            <p>Creado con ❤️ | Totalmente personalizable | 100% responsive</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">Versión 1.0 | 2024 | Licencia MIT</p>
+        </div>
+    </div>
+</body>
+</html>
