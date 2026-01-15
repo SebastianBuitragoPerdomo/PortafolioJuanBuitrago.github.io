@@ -12,8 +12,8 @@ Abre `VERIFICACION.html` en tu navegador para ver un checklist completo de lo qu
 ### Paso 2️⃣ - Configuración Rápida (5 minutos)
 Lee `CONFIGURACION_RAPIDA.md` para configurar el formulario de contacto y personalizar contenido básico.
 
-### Paso 3️⃣ - Guía Completa (Referencia)
-Consulta `GUIA_CONFIGURACION.md` para una guía detallada de todas las opciones.
+### Paso 3️⃣ - Prueba el Formulario (5 minutos)
+Lee `PRUEBA_FORMULARIO.md` para probar que el formulario funciona correctamente con FormSubmit.
 
 ## ✨ Características Principales
 
